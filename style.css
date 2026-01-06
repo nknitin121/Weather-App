@@ -1,0 +1,181 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* 🌌 NEW BACKGROUND */
+body{
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #851ba2, #0f2027);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* 🧊 GLASS CARD + NEW ANIMATION */
+.card{
+  width: 100%;
+  max-width: 470px;
+  margin-top: 100px;
+  padding: 40px 35px;
+  border-radius: 25px;
+  color: #fff;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+
+  animation: zoomBlur 1.1s ease forwards;
+}
+
+/* 🔮 CARD ANIMATION */
+@keyframes zoomBlur{
+  0%{
+    opacity: 0;
+    transform: scale(0.85);
+    filter: blur(8px);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* 🔍 SEARCH BAR */
+.search{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search input{
+  flex: 1;
+  height: 55px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  padding: 0 22px;
+  font-size: 17px;
+  color: #333;
+  background: rgba(255,255,255,0.9);
+  transition: all 0.35s ease;
+}
+
+.search input:focus{
+  box-shadow: 0 0 15px rgba(0,254,186,0.8);
+  transform: scale(1.04);
+}
+
+.search button{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00feba, #5b5481);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.search button:hover{
+  transform: scale(1.15) rotate(15deg);
+  box-shadow: 0 0 20px rgba(0,254,186,0.8);
+}
+
+.search button img{
+  width: 16px;
+}
+
+/* 🌦️ WEATHER ICON – NEW PULSE FLOAT */
+.whether-icon{
+  width: 160px;
+  margin-top: 35px;
+  animation: pulseFloat 4s ease-in-out infinite;
+}
+
+@keyframes pulseFloat{
+  0%{
+    transform: translateY(0) scale(1);
+  }
+  50%{
+    transform: translateY(-14px) scale(1.05);
+  }
+  100%{
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🌡️ TEMPERATURE */
+.whether h1{
+  font-size: 82px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.whether h2{
+  font-size: 42px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* 📊 DETAILS WITH FADE GLOW */
+.details{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 55px;
+  padding: 0 10px;
+  animation: glowUp 1.2s ease forwards;
+}
+
+@keyframes glowUp{
+  from{
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.col{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.col img{
+  width: 42px;
+}
+
+.humidity,
+.wind{
+  font-size: 26px;
+  font-weight: 500;
+}
+
+/* ✨ SUBTLE TEXT GLOW */
+h1, h2, .humidity, .wind{
+  text-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width: 500px){
+  .card{
+    margin-top: 60px;
+    padding: 30px 22px;
+  }
+  .whether h1{
+    font-size: 60px;
+  }
+  .whether h2{
+    font-size: 34px;
+  }
+}
